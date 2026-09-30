@@ -1,0 +1,62 @@
+[
+    {
+        "merged": "com.smartpantry.manager.app-debug-32:/drawable_ic_recipes.xml.flat",
+        "source": "com.smartpantry.manager.app-main-34:/drawable/ic_recipes.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-debug-32:/layout_activity_suggested_recipes.xml.flat",
+        "source": "com.smartpantry.manager.app-main-34:/layout/activity_suggested_recipes.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-debug-32:/menu_menu_main.xml.flat",
+        "source": "com.smartpantry.manager.app-main-34:/menu/menu_main.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-debug-32:/layout_activity_pantry_list.xml.flat",
+        "source": "com.smartpantry.manager.app-main-34:/layout/activity_pantry_list.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-debug-32:/drawable_ic_add.xml.flat",
+        "source": "com.smartpantry.manager.app-main-34:/drawable/ic_add.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-debug-32:/layout_item_pantry.xml.flat",
+        "source": "com.smartpantry.manager.app-main-34:/layout/item_pantry.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-debug-32:/drawable_ic_delete.xml.flat",
+        "source": "com.smartpantry.manager.app-main-34:/drawable/ic_delete.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-debug-32:/layout_activity_add_edit_ingredient.xml.flat",
+        "source": "com.smartpantry.manager.app-main-34:/layout/activity_add_edit_ingredient.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-debug-32:/layout_activity_settings.xml.flat",
+        "source": "com.smartpantry.manager.app-main-34:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-debug-32:/drawable_ic_launcher.xml.flat",
+        "source": "com.smartpantry.manager.app-main-34:/drawable/ic_launcher.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-debug-32:/layout_item_recipe.xml.flat",
+        "source": "com.smartpantry.manager.app-main-34:/layout/item_recipe.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-debug-32:/drawable_ic_chevron.xml.flat",
+        "source": "com.smartpantry.manager.app-main-34:/drawable/ic_chevron.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-debug-32:/layout_activity_recipe_detail.xml.flat",
+        "source": "com.smartpantry.manager.app-main-34:/layout/activity_recipe_detail.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-debug-32:/drawable_ic_settings.xml.flat",
+        "source": "com.smartpantry.manager.app-main-34:/drawable/ic_settings.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-debug-32:/drawable_ic_edit.xml.flat",
+        "source": "com.smartpantry.manager.app-main-34:/drawable/ic_edit.xml"
+    }
+]

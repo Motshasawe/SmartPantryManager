@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "com.smartpantry.manager.app-mergeDebugResources-31:/layout/activity_suggested_recipes.xml",
+        "source": "com.smartpantry.manager.app-main-34:/layout/activity_suggested_recipes.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-mergeDebugResources-31:/layout/activity_recipe_detail.xml",
+        "source": "com.smartpantry.manager.app-main-34:/layout/activity_recipe_detail.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-mergeDebugResources-31:/layout/activity_settings.xml",
+        "source": "com.smartpantry.manager.app-main-34:/layout/activity_settings.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-mergeDebugResources-31:/layout/item_recipe.xml",
+        "source": "com.smartpantry.manager.app-main-34:/layout/item_recipe.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-mergeDebugResources-31:/layout/activity_pantry_list.xml",
+        "source": "com.smartpantry.manager.app-main-34:/layout/activity_pantry_list.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-mergeDebugResources-31:/layout/item_pantry.xml",
+        "source": "com.smartpantry.manager.app-main-34:/layout/item_pantry.xml"
+    },
+    {
+        "merged": "com.smartpantry.manager.app-mergeDebugResources-31:/layout/activity_add_edit_ingredient.xml",
+        "source": "com.smartpantry.manager.app-main-34:/layout/activity_add_edit_ingredient.xml"
+    }
+]
