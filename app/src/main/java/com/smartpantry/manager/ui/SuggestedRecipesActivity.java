@@ -18,6 +18,7 @@ import com.smartpantry.manager.model.PantryItem;
 import com.smartpantry.manager.model.Recipe;
 import com.smartpantry.manager.util.IngredientMatcher;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SuggestedRecipesActivity extends AppCompatActivity
@@ -60,8 +61,24 @@ public class SuggestedRecipesActivity extends AppCompatActivity
         List<PantryItem> pantryItems = dbHelper.getAllPantryItems();
         List<Recipe> allRecipes = dbHelper.getAllRecipes();
         List<Recipe> matches = IngredientMatcher.getStrictMatches(allRecipes, pantryItems);
-        adapter.setRecipes(matches);
-        textEmpty.setVisibility(matches.isEmpty() ? View.VISIBLE : View.GONE);
+        List<Recipe> almost = IngredientMatcher.getAlmostThere(allRecipes, pantryItems);
+
+        if (matches.isEmpty() && almost.isEmpty()) {
+            textEmpty.setVisibility(View.VISIBLE);
+            adapter.setRecipes(new ArrayList<>());
+        } else {
+            textEmpty.setVisibility(View.GONE);
+            List<Recipe> combined = new ArrayList<>(matches);
+            combined.addAll(almost);
+            List<Boolean> flags = new ArrayList<>();
+            for (int i = 0; i < matches.size(); i++) {
+                flags.add(false);
+            }
+            for (int i = 0; i < almost.size(); i++) {
+                flags.add(true);
+            }
+            adapter.setRecipes(combined, flags);
+        }
     }
 
     @Override

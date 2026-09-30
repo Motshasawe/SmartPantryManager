@@ -21,6 +21,7 @@ public class SuggestedRecipesAdapter extends RecyclerView.Adapter<SuggestedRecip
     }
 
     private final List<Recipe> recipes = new ArrayList<>();
+    private final List<Boolean> almostThereFlags = new ArrayList<>();
     private final OnRecipeClickListener listener;
 
     public SuggestedRecipesAdapter(OnRecipeClickListener listener) {
@@ -29,8 +30,21 @@ public class SuggestedRecipesAdapter extends RecyclerView.Adapter<SuggestedRecip
 
     public void setRecipes(List<Recipe> newRecipes) {
         recipes.clear();
+        almostThereFlags.clear();
         if (newRecipes != null) {
             recipes.addAll(newRecipes);
+        }
+        notifyDataSetChanged();
+    }
+
+    public void setRecipes(List<Recipe> newRecipes, List<Boolean> almostFlags) {
+        recipes.clear();
+        almostThereFlags.clear();
+        if (newRecipes != null) {
+            recipes.addAll(newRecipes);
+        }
+        if (almostFlags != null) {
+            almostThereFlags.addAll(almostFlags);
         }
         notifyDataSetChanged();
     }
@@ -48,7 +62,14 @@ public class SuggestedRecipesAdapter extends RecyclerView.Adapter<SuggestedRecip
         Recipe recipe = recipes.get(position);
         holder.textRecipeName.setText(recipe.getName());
         int count = recipe.getIngredients() != null ? recipe.getIngredients().size() : 0;
-        holder.textRecipeMeta.setText(count + " ingredient" + (count == 1 ? "" : "s"));
+        boolean almost = position < almostThereFlags.size() && almostThereFlags.get(position);
+        if (almost) {
+            holder.textRecipeMeta.setText("Almost there - missing 1 ingredient");
+            holder.textRecipeMeta.setTextColor(holder.itemView.getContext().getColor(R.color.amber_500));
+        } else {
+            holder.textRecipeMeta.setText(count + " ingredient" + (count == 1 ? "" : "s"));
+            holder.textRecipeMeta.setTextColor(holder.itemView.getContext().getColor(R.color.grey_600));
+        }
         holder.itemView.setOnClickListener(v -> listener.onRecipeClick(recipe));
     }
 
