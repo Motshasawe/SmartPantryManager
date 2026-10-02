@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/green_700"
-        app:navigationIcon="@drawable/ic_chevron"
+        app:navigationIcon="@drawable/ic_back"
         app:title="@string/title_recipe_detail"
         app:titleTextColor="@color/white" />
 
