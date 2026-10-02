@@ -47,6 +47,15 @@ public class PantryListActivity extends AppCompatActivity
 
         textEmpty = findViewById(R.id.textEmpty);
 
+        android.widget.EditText editSearch = findViewById(R.id.editSearch);
+        editSearch.addTextChangedListener(new android.text.TextWatcher() {
+            @Override public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            @Override public void onTextChanged(CharSequence s, int start, int before, int count) {
+                filterList(s.toString());
+            }
+            @Override public void afterTextChanged(android.text.Editable s) {}
+        });
+
         FloatingActionButton fabAdd = findViewById(R.id.fabAdd);
         fabAdd.setOnClickListener(v -> {
             Intent intent = new Intent(PantryListActivity.this, AddEditIngredientActivity.class);
@@ -64,6 +73,24 @@ public class PantryListActivity extends AppCompatActivity
         List<PantryItem> items = dbHelper.getAllPantryItems();
         adapter.setItems(items);
         textEmpty.setVisibility(items.isEmpty() ? View.VISIBLE : View.GONE);
+    }
+
+    private void filterList(String query) {
+        List<PantryItem> allItems = dbHelper.getAllPantryItems();
+        if (query == null || query.trim().isEmpty()) {
+            adapter.setItems(allItems);
+            textEmpty.setVisibility(allItems.isEmpty() ? View.VISIBLE : View.GONE);
+            return;
+        }
+        List<PantryItem> filtered = new java.util.ArrayList<>();
+        String lowerQuery = query.toLowerCase(java.util.Locale.ROOT);
+        for (PantryItem item : allItems) {
+            if (item.getName().toLowerCase(java.util.Locale.ROOT).contains(lowerQuery)) {
+                filtered.add(item);
+            }
+        }
+        adapter.setItems(filtered);
+        textEmpty.setVisibility(filtered.isEmpty() ? View.VISIBLE : View.GONE);
     }
 
     @Override
