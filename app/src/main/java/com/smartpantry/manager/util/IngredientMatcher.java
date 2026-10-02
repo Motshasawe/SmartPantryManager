@@ -28,6 +28,9 @@ public final class IngredientMatcher {
         if (word.endsWith("ies") && word.length() > 3) {
             return word.substring(0, word.length() - 3) + "y";
         }
+        if (word.endsWith("oes") && word.length() > 3) {
+            return word.substring(0, word.length() - 2);
+        }
         if (word.endsWith("es") && word.length() > 3) {
             String withoutEs = word.substring(0, word.length() - 2);
             if (withoutEs.endsWith("s") || withoutEs.endsWith("sh") || withoutEs.endsWith("ch")) {
