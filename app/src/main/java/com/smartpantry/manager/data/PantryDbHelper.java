@@ -88,6 +88,17 @@ public class PantryDbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public void seedRecipesIfEmpty() {
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM " + TABLE_RECIPES, null);
+        cursor.moveToFirst();
+        int count = cursor.getInt(0);
+        cursor.close();
+        if (count == 0) {
+            SeedData.seed(getWritableDatabase());
+        }
+    }
+
     // ---------------------------------------------------------------------
     // Pantry CRUD
     // ---------------------------------------------------------------------

@@ -10,5 +10,6 @@ public class SmartPantryApp extends Application {
     public void onCreate() {
         super.onCreate();
         PantryDbHelper.getInstance(this).getWritableDatabase();
+        PantryDbHelper.getInstance(this).seedRecipesIfEmpty();
     }
 }
