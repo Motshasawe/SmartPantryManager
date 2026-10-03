@@ -267,6 +267,27 @@ public final class SeedData {
                         {"Olive oil", "2", "tbsp"},
                         {"Cheese", "30", "g"}
                 });
+
+        seedPantryItems(db);
+    }
+
+    private static void seedPantryItems(SQLiteDatabase db) {
+        insertPantryItem(db, "Tomato", 6, "piece", "2026-10-10");
+        insertPantryItem(db, "Pasta", 500, "g", null);
+        insertPantryItem(db, "Bread", 4, "slice", "2026-10-05");
+        insertPantryItem(db, "Cheese", 100, "g", "2026-10-09");
+        insertPantryItem(db, "Butter", 50, "g", "2026-10-08");
+        insertPantryItem(db, "Olive oil", 3, "tbsp", null);
+        insertPantryItem(db, "Salt", 5, "tsp", null);
+    }
+
+    private static void insertPantryItem(SQLiteDatabase db, String name, double quantity, String unit, String expiryDate) {
+        ContentValues values = new ContentValues();
+        values.put(PantryDbHelper.COL_NAME, name);
+        values.put(PantryDbHelper.COL_QUANTITY, quantity);
+        values.put(PantryDbHelper.COL_UNIT, unit);
+        values.put(PantryDbHelper.COL_EXPIRY, expiryDate);
+        db.insert(PantryDbHelper.TABLE_PANTRY, null, values);
     }
 
     private static void insertRecipe(SQLiteDatabase db, String name, String steps, String[][] ingredients) {
