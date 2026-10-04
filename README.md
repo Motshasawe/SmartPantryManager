@@ -35,25 +35,32 @@ settings - Key-value settings (alerts toggle, units)
 Project Structure:
 
 app/src/main/java/com/smartpantry/manager/
-├── SmartPantryApp.java          # Application class, initialises DB
-├── data/
-│   ├── PantryDbHelper.java      # SQLiteOpenHelper, CRUD operations
-│   └── SeedData.java            # 20 seeded recipes
-├── model/
-│   ├── PantryItem.java
-│   ├── Recipe.java
-│   └── RecipeIngredient.java
-├── util/
-│   ├── UnitConverter.java       # g/kg/ml/l/oz/cup/tbsp/tsp conversion
-│   └── IngredientMatcher.java   # Strict-matching + name normalisation
-└── ui/
-    ├── PantryListActivity.java
-    ├── AddEditIngredientActivity.java
-    ├── SuggestedRecipesActivity.java
-    ├── RecipeDetailActivity.java
-    ├── SettingsActivity.java
-    ├── PantryAdapter.java
-    └── SuggestedRecipesAdapter.java
+
+# Application class, initialises DB:
+SmartPantryApp.java   
+
+# SQLiteOpenHelper, CRUD operations     
+data:
+ PantryDbHelper.java      
+ SeedData.java            
+
+model:
+PantryItem.java
+Recipe.java
+RecipeIngredient.java
+
+util:
+UnitConverter.java      
+IngredientMatcher.java   
+
+ui:
+PantryListActivity.java
+AddEditIngredientActivity.java
+SuggestedRecipesActivity.java
+RecipeDetailActivity.java
+SettingsActivity.java
+PantryAdapter.java
+SuggestedRecipesAdapter.java
 
 
 Setup & Run:
