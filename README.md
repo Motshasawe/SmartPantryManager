@@ -76,3 +76,5 @@ Strict-Matching Rule:
 A recipe is only suggested when every ingredient it requires is present in the pantry in at least the required quantity. 
 The matcher normalises ingredient names (lowercase, singular/plural handling - "tomato" matches "tomatoes") 
 and converts units to a common base (g, ml, piece) before comparing quantities.
+........
+ 
